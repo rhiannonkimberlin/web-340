@@ -1,0 +1,8 @@
+{
+    "name": "exercise2.3",
+    "author": "rhiannon kimberlin",
+    "private": true,
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
