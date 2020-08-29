@@ -1,0 +1,8 @@
+{
+    "name": "status-codes",
+    "author": "Rhiannon Kimberlin",
+    "private": true,
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
