@@ -1,0 +1,9 @@
+{
+    "name": "tdd-example",
+    "author": "Rhiannon Kimberlin",
+    "private": true,
+    "dependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^8.1.3"
+    }
+}
