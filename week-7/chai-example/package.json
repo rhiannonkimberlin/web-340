@@ -1,0 +1,8 @@
+{
+    "name": "chai-example",
+    "author": "Rhiannon Kimberlin",
+    "private": true,
+    "dependencies": {
+        "chai": "^4.2.0"
+    }
+}
