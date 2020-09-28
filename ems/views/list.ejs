@@ -1,49 +1,37 @@
-<!--Tabular Employee Records-->
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ("header") %>
 
-<table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Employee ID</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Job Title</th>
-      </tr>
-    </thead>
-    <tbody>
-        <!--Employee 1-->
-      <tr>
-        <th scope="row">52181</th>
-        <td>Danica</td>
-        <td>Dias</td>
-        <td>General Manager</td>
-      </tr>
-      <!--Employee 2-->
-      <tr>
-        <th scope="row">97261</th>
-        <td>Bentley</td>
-        <td>Green</td>
-        <td>Assistant Manager</td>
-      </tr>
-      <!--Employee 3-->
-      <tr>
-        <th scope="row">24826</th>
-        <td>Cash</td>
-        <td>Murphy</td>
-        <td>Employee</td>
-      </tr>
-      <!--Employee 4-->
-      <tr>
-        <th scope="row">24826</th>
-        <td>Jessica</td>
-        <td>Donahue</td>
-        <td>Regional Manager</td>
-      </tr>
-      <!--Employee 5-->
-      <tr>
-        <th scope="row">72183</th>
-        <td>Vic</td>
-        <td>Sol</td>
-        <td>Employee</td>
-      </tr>
-    </tbody>
-  </table>
+  <body>
+    <div id="main">
+      <h2>Employees</h2>
+      <table class="table table-dark table-striped table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <% if(employees.length) { %>
+          <% var x = 1; %>
+          <% employees.forEach(function(employee) { %>
+
+            <tr>
+              <th><%=x %></th>
+              <td><%=employee.firstName %></td>
+              <td><%=employee.lastName %></td>
+              <td><%=employee.email %></td>
+            </tr>
+            <%x++; %>
+            <% }) %>
+        <% } <%>
+      </table>
+      <a href="#"><button id="addBtn" class="btn">Add</button></a>    </div>
+
+<%- include("footer") -%>
+  </body>
+
+
+</html>
