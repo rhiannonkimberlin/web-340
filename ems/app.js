@@ -32,6 +32,7 @@ mongoose.connect(mongoDB, {
 
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
+app.set('port', process.env.PORT || 8080);
 app.use(logger("short"));
 //added 9.21
 app.use(helmet.xssFilter());
@@ -42,10 +43,35 @@ app.get("/", function (req, res) {
         message: "XSS Prevention Example"
     });
 });
+
+app.get('/new', function(req, res) {
+    red.render('new', {
+        title: 'New',
+        active: 'new',
+    });
+})
+
+app.get('/list', function(req, res){
+    employee.find({}, function (error, employees) {
+        if (error) {
+            throw error;
+        }
+        res.render('list', {
+            title: 'Employee List',
+            active: 'view',
+            employees: employees,
+        })
+    })
+})
 //added 9.28
 app.post("/process", function(req, res){
     console.log(req.body.txtName);
-    res.redirect("/")
+    
+    
+if (!req.body.firstName && !req.body.lastName && !req.body.title){
+    res.status(400).send('First Name, Last Name and Title');
+    return;
+  }
 });
 
 //added 9.28
@@ -61,11 +87,25 @@ app.use(function(req, res, next) {
     next();
 })
 
+var employeeFName = req.body.employeeFName;
+var employeeLName = req.body.employeeLName;
+var employeeEmail = req.body.employeeEmail; 
 //added 9.19 employee model
 var employee = new employee({
-    firstName: 'Willow',
-    lastName: 'Donatti'
+    employeeFName: 'Willow',
+    employeeLName: 'Donatti',
+    employeeEmail: 'unicorn@gmail.com'
 })
+
+employee.save(function(error) {
+    if (error) {
+      throw error;
+    }
+      console.log(employeeFName + ' saved successfully!');
+
+  });
+  res.redirect('/list');
+
 
 
 

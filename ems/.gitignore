@@ -1,0 +1,20 @@
+# ======================================
+# Title: .gitignore
+# Author: Professor Krasso
+# Date: October 4 2020
+# Modified By: Rhiannon Kimberlin
+# Description: Excercise 9.3
+# ======================================
+
+# IDE
+.vscode
+.idea
+
+# Node ddependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache

@@ -5,7 +5,18 @@
     <%- include("navbar") %>
     <!--Body-->
     <body>
-
+        <div role="main" class="container">
+            <br><Br>
+                <h1>Employee Records</h1>
+                <br><br>
+                <div>
+                    <div="form">
+                        <label for = "txtName">Name: </label>
+                        <input type="text" class="form-control" id="txtName" readonly value="<%= employee[0].name %>" name="txtName">
+                    </div>
+                </div>
+                
+        </div>
         
     <%- include("footer") %>
     <%- include("script") %>
