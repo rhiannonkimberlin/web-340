@@ -7,14 +7,15 @@
     <body>
         <!--Data Entry Page-->
         <form method="post" action="/process">
-            <label for="employeeFName">First Name</label>
-            <input type="text" id="employeeFName" name="employeeFName" value="Employee First Name"><br>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" value="Employee First Name"><br>
             
-            <label for="employeeLName">Last Name</label>
-            <input type="text" id="employeeLName" name="employeeLName" value="Employee Last Name"><br>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" value="Employee Last Name"><br>
 
-            <label for="employeeEmail">Email</label>
-            <input type="email" id="employeeEmail" name="employeeEmail" value="Employee Email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="Employee Email">
+            
             <input name="_csrf" value="<%= csrfToken %>" type="hidden">
             <button type="submit" value="Submit">Add Employee</button>
             
